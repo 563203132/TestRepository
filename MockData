@@ -1,0 +1,559 @@
+const mockData = [
+  {
+    userId: 0,
+    cicId: 65,
+    cicStatus: 'New',
+    cicCategories: [
+      {
+        cicCategoryId: 107,
+        cicCategoryName: 'Listening & Grammar',
+        orderingSequence: 1,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 40,
+            cicCategoryItemName: 'Reporting verbs: practicing reporting questions and statements.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 40,
+            cicCategoryItemName:'Making connections: identifying how parts of a dialog relate to short written comments.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+        ]
+      },
+      {
+        cicCategoryId: 107,
+        cicCategoryName: 'Listening & Grammar',
+        orderingSequence: 1,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 40,
+            cicCategoryItemName: 'Reporting verbs: practicing reporting questions and statements.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 40,
+            cicCategoryItemName:'Making connections: identifying how parts of a dialog relate to short written comments.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+        ]
+      },
+      {
+        cicCategoryId: 108,
+        cicCategoryName: 'Reading',
+        orderingSequence: 2,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 41,
+            cicCategoryItemName: 'Retelling simple stories in a concise manner.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 42,
+            cicCategoryItemName: 'Phrases: "What\'s the story about?", "It\'s set in…"',
+            orderingSequence: 2,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 42,
+            cicCategoryItemName: 'Identifying key information: identifying important information to help make decisions.',
+            orderingSequence: 2,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 109,
+        cicCategoryName: 'Vocabulary',
+        orderingSequence: 3,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 44,
+            cicCategoryItemName: 'Movies and the cinema: blockbuster, box office chart, number 1, popular, reviews, top 10, trending, unpopular, viral.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 44,
+            cicCategoryItemName: '"Identifying peoples" opinions of different movies.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 44,
+            cicCategoryItemName: 'Discussing movies using a range of vocabulary.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 44,
+            cicCategoryItemName: 'Expressing certainty: I know..., I\'m certain that…, I\'m sure that…, I believe that…, I suppose that…, I think so, I don\'t think so, I don\'t think that.',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 110,
+        cicCategoryName: 'Speaking & Writing',
+        orderingSequence: 4,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Writing short movie reviews.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Asking classmates what they think about movies.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Giving opinions in short movie reviews.',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 111,
+        cicCategoryName: 'Speaking Assessment',
+        orderingSequence: 4,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Making decisions: talking about how popular different movies are.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Discussing possibilities: using could, may & might to discuss possible stories and settings for movies.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Discussing possibilities: using could, may & might to discuss possible stories and settings for movies.',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      }
+    ],
+    cicActivities: [
+      {
+        cicActivityId: 22,
+        cicActivityName: 'Student Book, Page 15',
+        orderingSequence: 1,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 22,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 75,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 108,
+            cicActivityItemCode: 'C',
+            orderingSequence: 3,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 23,
+        cicActivityName: 'Student Book, Page 16',
+        orderingSequence: 2,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 23,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 76,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 24,
+        cicActivityName: 'Workbook, Page 8',
+        orderingSequence: 3,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 24,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 25,
+        cicActivityName: 'Workbook, Page 8',
+        orderingSequence: 3,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 24,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 23,
+        cicActivityName: 'Student Book, Page 16',
+        orderingSequence: 2,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 23,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 76,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 23,
+        cicActivityName: 'Student Book, Page 16',
+        orderingSequence: 2,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 23,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 76,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    userId: 0,
+    cicId: 66,
+    cicStatus: 'New',
+    cicCategories: [
+      {
+        cicCategoryId: 107,
+        cicCategoryName: 'Listening & Grammar',
+        orderingSequence: 1,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 40,
+            cicCategoryItemName: 'Prepositions of time',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 108,
+        cicCategoryName: 'Reading & Writing',
+        orderingSequence: 2,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 41,
+            cicCategoryItemName: 'Making, accepting and declining invitations.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicCategoryItemId: 42,
+            cicCategoryItemName: 'Practicing time expressions and prepositions.',
+            orderingSequence: 2,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 110,
+        cicCategoryName: 'Speaking Assessment',
+        orderingSequence: 4,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Making plans with classmates.',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      }
+    ],
+    cicActivities: [
+      {
+        cicActivityId: 22,
+        cicActivityName: 'Student Book, Page 15',
+        orderingSequence: 1,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 22,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 75,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 108,
+            cicActivityItemCode: 'C',
+            orderingSequence: 3,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 23,
+        cicActivityName: 'Student Book, Page 16',
+        orderingSequence: 2,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 23,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 76,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 24,
+        cicActivityName: 'Workbook, Page 8',
+        orderingSequence: 3,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 24,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 25,
+        cicActivityName: 'Workbook, Page 9',
+        orderingSequence: 4,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 24,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    userId: 0,
+    cicId: 67,
+    cicStatus: 'New',
+    cicCategories: [
+      {
+        cicCategoryId: 107,
+        cicCategoryName: 'Listening & Grammar',
+        orderingSequence: 1,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 40,
+            cicCategoryItemName: 'Prepositions of time',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 108,
+        cicCategoryName: 'Reading & Writing',
+        orderingSequence: 2,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 41,
+            cicCategoryItemName: 'Making, accepting and declining invitations.',
+            orderingSequence: 1,
+            isChecked: true
+          },
+        ]
+      },
+      {
+        cicCategoryId: 109,
+        cicCategoryName: 'Review',
+        orderingSequence: 3,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 44,
+            cicCategoryItemName: 'Review',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 110,
+        cicCategoryName: 'Speaking Assessment',
+        orderingSequence: 4,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 43,
+            cicCategoryItemName: 'Making plans with classmates.',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicCategoryId: 109,
+        cicCategoryName: 'Review',
+        orderingSequence: 5,
+        cicCategoryItems: [
+          {
+            cicCategoryItemId: 45,
+            cicCategoryItemName: 'Review',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+    ],
+    cicActivities: [
+      {
+        cicActivityId: 22,
+        cicActivityName: 'Student Book, Page 15',
+        orderingSequence: 1,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 22,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 75,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 108,
+            cicActivityItemCode: 'C',
+            orderingSequence: 3,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 23,
+        cicActivityName: 'Student Book, Page 16',
+        orderingSequence: 2,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 23,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          },
+          {
+            cicActivityItemId: 76,
+            cicActivityItemCode: 'B',
+            orderingSequence: 2,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 24,
+        cicActivityName: 'Workbook, Page 8',
+        orderingSequence: 3,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 24,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 25,
+        cicActivityName: 'Workbook, Page 9',
+        orderingSequence: 4,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 25,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 26,
+        cicActivityName: 'Workbook, Page 9',
+        orderingSequence: 5,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 26,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      },
+      {
+        cicActivityId: 27,
+        cicActivityName: 'Workbook, Page 9',
+        orderingSequence: 6,
+        cicActivityItems: [
+          {
+            cicActivityItemId: 27,
+            cicActivityItemCode: 'A',
+            orderingSequence: 1,
+            isChecked: true
+          }
+        ]
+      }
+    ]
+  }
+];
+
+export default mockData;
