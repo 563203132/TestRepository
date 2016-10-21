@@ -1,0 +1,22 @@
+function toJSON(data) {
+    return JSON.stringify(data);
+}
+
+function activitiesString(items) {
+    var result = "Activities: ";
+    items.map((item, index) => {
+        if (index !== 0) {
+            result = result.concat(", ")
+        }
+        result = result.concat(item.cicActivityItemCode);
+    });
+    return result;
+}
+
+function isPageBreak(index) {
+    if (index > 0) {
+        return true;
+    }
+    
+    return false;
+}
