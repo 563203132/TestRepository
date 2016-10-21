@@ -1,0 +1,107 @@
+<style>
+    html {
+        zoom: 1;
+    }
+    
+    .section {
+        min-height: 800px;;
+        width: 100%;
+        page-break-before: always;
+    }
+    .header {
+        background-color: #fff;
+        border-bottom: 2px solid #d0d0d0;
+        height: 190px;
+        margin-bottom: 14px;
+        text-align: left;
+    }
+    
+    .headercompanyicon {
+        background-color: green;
+        height: 40px;
+        width: 68px;
+    }
+    .content {
+        background-color: green;
+        min-height: 830px;
+        overflow: auto;
+    }
+    
+    .categories {
+        width: 100%;
+        text-align: left;
+    }
+    .category {
+        margin-bottom: 20px;
+    }
+    .categorytitle {
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .categoryitem {
+        font-size: 11px;
+        margin: 5px 0 0 20px;
+    }
+    .activity {
+        display: inline-block;
+        width: 29%;
+    }
+</style>
+<div>
+    {{#each data}}
+    <table class="section">
+        <thead>
+            <tr>
+                <td>
+                    <div class="header">
+                        <img class="headercompanyicon" src='{#image eficon}'/>
+                        <h2>Covered in Class</h2>
+                        <div style="display: inline-block; float: left; width: 50%; vertical-align: top; font-size: 17;">
+                            <div>Name Surname</div>
+                            <div>Teacher</div>
+                        </div>
+                        <div style="display: inline-block; float: right; width: 50%; font-size: 15px;">
+                            <div style="margin-bottom: 20px;">Course name and level</div>
+                            <div>Unit 2, session {{cicId}}</div>
+                            <div>2016-03-04</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <h3>LANGUAGE POINTS</h3>
+                </td>
+            </tr>
+            {{#each cicCategories}}
+            <tr>
+                <td>
+                    <div class="category">
+                        <div class="categorytitle">{{cicCategoryName}}</div>
+                        {{#each cicCategoryItems}}
+                        <li class="categoryitem">{{cicCategoryItemName}}</li>
+                        {{/each}}
+                    </div>
+                </td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td>
+                    <div class="activities">
+                        <h3>PAGES & ACTIVITIES</h3>
+                        {{#each cicActivities}}
+                        <div class="activity">
+                            <h5>{{cicActivityName}}</h5>
+                            <p>{{{activitiesString cicActivityItems}}}</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <img style="height: 0px;" src='{#image qrcode}'/>
+    {{/each}}
+</div>
